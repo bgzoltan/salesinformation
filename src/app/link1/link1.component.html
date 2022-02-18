@@ -5,56 +5,41 @@
         <form
             class="fs-5 d-flex"
             [formGroup]="periodFilter"
-            (ngSubmit)="submitPeriod()"
         >
+            <label for="period">Time period </label>
             <select
+                id="period"
                 formControlName="period"
                 class="form-select w-auto"
+                (change)="submitPeriod()"
             >
                 <option
-                    [ngValue]="null"
-                    disabled
-                >Select Period</option>
-                <option
-                    *ngFor="let period of periods"
+                    *ngFor="let period of periods; let i=index"
                     [ngValue]="period.name"
                 >
                     {{ period.name }}
                 </option>
             </select>
-
-            <button
-                class="btn btn-primary"
-                type="submit"
-            >Select</button>
         </form>
 
         <!-- SALES FILTER -->
         <form
             class="fs-5 d-flex"
             [formGroup]="salesFilter"
-            (ngSubmit)="submitSales()"
-        >
+        > <label for="salePeople">Sales people </label>
             <select
+                id="salesPeople"
                 formControlName="sales"
                 class="form-select w-auto"
+                (change)="submitSales()"
             >
                 <option
-                    [ngValue]="null"
-                    disabled
-                >Select Sales</option>
-                <option
-                    *ngFor="let sales of saleses"
+                    *ngFor="let sales of salesPeople"
                     [ngValue]="sales.name"
                 >
                     {{ sales.name }}
                 </option>
             </select>
-
-            <button
-                class="btn btn-primary"
-                type="submit"
-            >Select</button>
         </form>
     </div>
 
@@ -63,8 +48,8 @@
             <tr class="table-primary">
                 <th scope="col">#</th>
                 <th scope="col">Period</th>
+                <th scope="col">Status</th>
                 <th scope="col">Sales</th>
-
                 <th scope="col">Customer</th>
                 <th scope="col">Description</th>
                 <th scope="col">Value</th>
@@ -78,6 +63,7 @@
             >
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{ project.period }}</td>
+                <td>{{ project.status }}</td>
                 <td>
                     {{ project.sales }}
                 </td>
@@ -95,6 +81,7 @@
 
             <tr class="bg-warning text-white">
                 <td>Total value</td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>

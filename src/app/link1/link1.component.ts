@@ -31,7 +31,7 @@ export class Link1Component implements OnInit {
     { name: 'Q4' },
   ];
 
-  saleses = [
+  salesPeople = [
     { name: 'All' },
     { name: 'Bagdány Zoli' },
     { name: 'Tóth Péter' },
@@ -43,10 +43,10 @@ export class Link1Component implements OnInit {
 
   ngOnInit(): void {
     this.periodFilter = this.fb.group({
-      period: [null],
+      period: "All",
     });
     this.salesFilter = this.fb.group({
-      sales: [null],
+      sales: "All",
     });
   }
   console = console;
@@ -57,6 +57,7 @@ export class Link1Component implements OnInit {
   }
 
   submitSales() {
+    this.console.log("Called....")
     this.filter = this.salesFilter.value.sales;
     this.filterType = 'sales';
   }
