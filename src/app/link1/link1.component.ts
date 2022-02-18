@@ -19,9 +19,9 @@ export class Link1Component implements OnInit {
   filter = 'All';
   filterType = 'period';
   periodFilter!: FormGroup;
-  isPeriodFilter:boolean=false;
+ 
   salesFilter!: FormGroup;
-  isSalesFilter:boolean=false;
+ 
 
   periods = [
     { name: 'All' },
@@ -61,7 +61,7 @@ export class Link1Component implements OnInit {
     this.filterType = 'sales';
   }
 
-  // Return the filetered projects
+  // Return the filtered projects
   public get selectedProjects(): Project[] {
     let filteredProjects:Project[] = [];
     switch (this.filterType) {
@@ -70,7 +70,7 @@ export class Link1Component implements OnInit {
         this.allProjects.filter(
             (obj) => obj.period === this.filter
           ) : this.allProjects
-        break;
+       break;
       case 'sales':
        filteredProjects= this.filter != 'All' ?
         this.allProjects.filter(
