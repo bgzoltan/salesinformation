@@ -1,0 +1,58 @@
+#myWrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 40px;
+}
+
+#myWrapper nav {
+  font-size: 20px;
+  background-color: coral;
+  width: 100vw;
+  height: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#myWrapper nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5px;
+  margin: 0px;
+}
+
+#myWrapper nav ul li {
+  list-style: none;
+}
+
+#myWrapper nav ul li a {
+  text-decoration: none;
+}
+
+#myWrapper nav ul li .active {
+  background-color: chocolate;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=app.component.css.map */
